@@ -1,0 +1,15 @@
+[project]
+name = "data-challenge"
+version = "0.1.0"
+description = "This is a data engineering project with good practices for Globant DE position"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.139.0",
+    "fastavro>=1.12.2",
+    "psycopg[binary]>=3.3.4",
+    "pydantic-settings>=2.14.2",
+    "rich>=15.0.0",
+    "sqlalchemy>=2.0.51",
+    "uvicorn>=0.51.0",
+]
