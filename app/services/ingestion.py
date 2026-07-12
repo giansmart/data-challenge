@@ -43,4 +43,6 @@ def ingest_batch(
         inserted += 1
 
     db.commit()
-    return IngestResponse(inserted=inserted, rejected=len(rejected_records), rejected_records=rejected_records)
+    return IngestResponse(
+        inserted=inserted, rejected=len(rejected_records), rejected_records=rejected_records
+    )

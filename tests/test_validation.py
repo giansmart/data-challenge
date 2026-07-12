@@ -52,7 +52,13 @@ def test_validate_hired_employee_bad_iso_datetime():
 
 def test_validate_hired_employee_nonexistent_department():
     result = validate_hired_employee(
-        {"id": "1", "name": "John", "datetime": "2021-07-27T16:02:08Z", "department_id": "9999", "job_id": "1"},
+        {
+            "id": "1",
+            "name": "John",
+            "datetime": "2021-07-27T16:02:08Z",
+            "department_id": "9999",
+            "job_id": "1",
+        },
         db=_mock_db(department_exists=False, job_exists=True),
     )
     assert not result.valid
@@ -61,7 +67,13 @@ def test_validate_hired_employee_nonexistent_department():
 
 def test_validate_hired_employee_nonexistent_job():
     result = validate_hired_employee(
-        {"id": "1", "name": "John", "datetime": "2021-07-27T16:02:08Z", "department_id": "1", "job_id": "9999"},
+        {
+            "id": "1",
+            "name": "John",
+            "datetime": "2021-07-27T16:02:08Z",
+            "department_id": "1",
+            "job_id": "9999",
+        },
         db=_mock_db(department_exists=True, job_exists=False),
     )
     assert not result.valid

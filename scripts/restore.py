@@ -19,7 +19,9 @@ logger = logging.getLogger(__name__)
 def main() -> None:
     setup_logging()
     parser = argparse.ArgumentParser()
-    parser.add_argument("table", nargs="?", choices=list(MODELS), help="table to restore (omit when using --all)")
+    parser.add_argument(
+        "table", nargs="?", choices=list(MODELS), help="table to restore (omit when using --all)"
+    )
     parser.add_argument("--all", action="store_true", help="restore all tables in dependency order")
     args = parser.parse_args()
 
