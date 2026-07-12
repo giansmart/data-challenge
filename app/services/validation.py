@@ -36,7 +36,7 @@ def _parse_iso_datetime(raw: str, errors: list[str]) -> datetime | None:
     try:
         return datetime.fromisoformat(str(raw).strip())
     except ValueError:
-        errors.append(f"'datetime' must be ISO 8601, got {raw!r}") # what is it?
+        errors.append(f"'datetime' must be ISO 8601, got {raw!r}")  # what is it?
         return None
 
 
